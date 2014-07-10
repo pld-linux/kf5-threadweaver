@@ -21,6 +21,8 @@ BuildRequires:	Qt5Test-devel
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	kf5-extra-cmake-modules >= 1.0.0
 BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
