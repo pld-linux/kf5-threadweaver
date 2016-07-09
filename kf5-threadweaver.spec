@@ -1,15 +1,15 @@
-%define		kdeframever	5.19
+%define		kdeframever	5.23
 %define		qtver		5.3.2
 %define		kfname		threadweaver
 
 Summary:	Helper for multithreaded programming
 Name:		kf5-%{kfname}
-Version:	5.19.0
+Version:	5.23.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	fb9848428899fa10c46121810cf3a022
+# Source0-md5:	b7afffde55f36e3878a2e9ccbd70989c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
@@ -19,6 +19,7 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
+Requires:	kf5-dirs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt5dir		%{_libdir}/qt5
