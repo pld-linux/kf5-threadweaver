@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.103
+%define		kdeframever	5.104
 %define		qtver		5.15.2
 %define		kfname		threadweaver
 
 Summary:	Helper for multithreaded programming
 Name:		kf5-%{kfname}
-Version:	5.103.0
+Version:	5.104.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	f6322ae074c4acdbc6e0396a93ce1eaa
+# Source0-md5:	5b9236a53d1ab6ab6d8d2d003272cfb1
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
