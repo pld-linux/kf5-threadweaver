@@ -1,21 +1,21 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.114
+%define		kdeframever	5.249.0
 %define		qtver		5.15.2
 %define		kfname		threadweaver
 
 Summary:	Helper for multithreaded programming
 Name:		kf5-%{kfname}
-Version:	5.114.0
-Release:	1
+Version:	5.249.0
+Release:	0.1
 License:	LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	bfcc9ef729a0390a21243ba67b324277
+Source0:	https://download.kde.org/unstable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
+# Source0-md5:	9b4e710a774efb96847a8e33d129e4d3
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5Test-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Test-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
 BuildRequires:	ninja
@@ -26,7 +26,7 @@ BuildRequires:	zlib-devel
 Requires:	kf5-dirs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		qt5dir		%{_libdir}/qt5
+%define		qt6dir		%{_libdir}/qt6
 
 %description
 ThreadWeaver is a helper for multithreaded programming. It uses a
@@ -82,12 +82,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md
-%ghost %{_libdir}/libKF5ThreadWeaver.so.5
-%attr(755,root,root) %{_libdir}/libKF5ThreadWeaver.so.*.*
+%ghost %{_libdir}/libKF6ThreadWeaver.so.6
+%attr(755,root,root) %{_libdir}/libKF6ThreadWeaver.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/ThreadWeaver
-%{_libdir}/cmake/KF5ThreadWeaver
-%{_libdir}/libKF5ThreadWeaver.so
-%{qt5dir}/mkspecs/modules/qt_ThreadWeaver.pri
+%{_includedir}/KF6/ThreadWeaver
+%{_libdir}/cmake/KF6ThreadWeaver
+%{_libdir}/libKF6ThreadWeaver.so
